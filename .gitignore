@@ -1,0 +1,34 @@
+cover.out
+nohup.out
+
+pkg/**/debug.test
+
+.DS_Store
+
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+.idea/**
+
+### VS Code ###
+.vscode/
+.vscode/launch.json
+.vscode/launch.json
+.vscode/settings.json
+
+loanorigination

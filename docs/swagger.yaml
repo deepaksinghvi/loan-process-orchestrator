@@ -1,0 +1,130 @@
+definitions:
+  common.ApprovalWorkflowRequest:
+    properties:
+      approved:
+        type: boolean
+      run_id:
+        type: string
+      workflow_id:
+        type: string
+    type: object
+  common.HTTPError:
+    properties:
+      code:
+        example: 400
+        type: integer
+      message:
+        example: status bad request
+        type: string
+    type: object
+  common.QueryResult:
+    properties:
+      content:
+        type: string
+      state:
+        type: string
+    type: object
+  common.WorkflowObject:
+    properties:
+      run_id:
+        type: string
+      workflow_id:
+        type: string
+    type: object
+  dto.LoanApplicationInputStep:
+    properties:
+      aadhaar_number:
+        type: string
+      account_no:
+        type: string
+      applicant_name:
+        type: string
+      pan_number:
+        type: string
+    type: object
+info:
+  contact: {}
+paths:
+  /loan-application:
+    post:
+      consumes:
+      - application/json
+      operationId: create-loan-application
+      parameters:
+      - description: 'Loan Application '
+        in: body
+        name: loanApplicationRequest
+        required: true
+        schema:
+          $ref: '#/definitions/dto.LoanApplicationInputStep'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.WorkflowObject'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.HTTPError'
+      summary: Create New Loan APplication
+      tags:
+      - loan-origination
+  /loan-application-approval/{workflow_id}/{run_id}:
+    post:
+      consumes:
+      - application/json
+      operationId: approval-process-loan-application
+      parameters:
+      - description: Loan Application Approval
+        in: body
+        name: approvalInput
+        required: true
+        schema:
+          $ref: '#/definitions/common.ApprovalWorkflowRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: string
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.HTTPError'
+      summary: Loan Application Process
+      tags:
+      - loan-origination
+  /loan-application/{workflow_id}/{run_id}:
+    get:
+      consumes:
+      - application/json
+      operationId: get-loan-application
+      parameters:
+      - description: Workflow ID
+        in: path
+        name: workflow_id
+        required: true
+        type: string
+      - description: Run ID
+        in: path
+        name: run_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/common.QueryResult'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/common.HTTPError'
+      summary: GetLoan Application state
+      tags:
+      - loan-origination
+swagger: "2.0"
