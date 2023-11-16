@@ -31,4 +31,4 @@ target/
 .vscode/launch.json
 .vscode/settings.json
 
-loanorigination
+loan-process-orchestrator
