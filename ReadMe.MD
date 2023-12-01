@@ -6,6 +6,7 @@ pen source platform that enables enterprises to maintain execution resiliency fo
 
 Temporal does the heavy lifting of ensuring execution in the face of danger, such as a momentary network outage or an unexpected slowdown in disk access. 
 
+![WithTemporalAndWihtout.png](common%2FWithTemporalAndWihtout.png) 
 All the operational stuff: Retries, recovery, persistent state, message queues, scaling, work distribution, tracing and monitoring are all handled by the platform itself.\
 
 
