@@ -1,8 +1,7 @@
 # loan-process-orchestrator
 
 ### Temporal Workflow Engine
-Temporal is an o
-pen source platform that enables enterprises to maintain execution resiliency for business processes in the event of an infrastructure failure. 
+Temporal is an open source platform that enables enterprises to maintain execution resiliency for business processes in the event of an infrastructure failure. 
 
 Temporal does the heavy lifting of ensuring execution in the face of danger, such as a momentary network outage or an unexpected slowdown in disk access. 
 
