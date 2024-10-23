@@ -49,7 +49,7 @@ Start Worker and Web App in different terminals
 ```
 WebApp can be accessed here:
 http://localhost:8080/swagger/index.html
-![webapp.png](common%2Fwebapp.png) 
+![webapp.png](common%2Fapis.png) 
 
 #### How to use the app
 
